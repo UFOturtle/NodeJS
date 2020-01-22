@@ -1,0 +1,28 @@
+body{
+    background-color: darkgray;;
+}
+#wrapper{
+    margin: auto;
+    background-color: darkorchid;
+    border: 3px solid gray;
+}
+#nav-bar {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: violet;
+}
+.nav-btn{
+    border: 2px solid rgba(250, 164, 26, 0.931);
+    background-color: blue;
+}
+.nav-btn:hover{
+    background-color: darkblue
+}
+a {
+    text-decoration: none;
+    color: yellow;
+}
+#form-box{
+    margin: auto;
+}
