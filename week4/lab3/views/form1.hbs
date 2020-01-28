@@ -1,0 +1,8 @@
+<form action="table" method="post" >
+    <select name="number">
+        {{#each choices}}
+            <option value={{this}}>{{this}}</option>
+        {{/each}}
+    </select>
+    <input type="submit">
+</form>
