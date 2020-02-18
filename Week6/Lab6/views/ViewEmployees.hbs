@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View | Employees</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark p-5">
+    <div class="container bg-secondary text-light col-md-10 align-self-center rounded border border-dark p-4">
+        <h2 style="font-family: 'Abril Fatface', cursive;">View Employees</h2>
+        <form method="POST" action="/ViewEmployees.hbs">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Job Title</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each employees}}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><input name="fname" type="text" class="form-control" value="{{this.fname}}" placeholder="First Name..." disabled></td>
+                        <td><input name="lname" type="text" class="form-control" value="{{this.lname}}" placeholder="Last Name..." disabled></td>
+                        <td>
+                            <select name="department" class="form-control" disabled>
+                                <option value="" disabled selected>{{this.department}}</option>
+                                <option>IT</option>
+                                <option>Marketing</option>
+                                <option>Management</option>
+                            </select>
+                        </td>
+                        <td><input name="sdate" type="date" class="form-control" value="{{this.startDate}}" placeholder="Start Date..." disabled></td>
+                        <td><input name="salary" type="number" class="form-control" value="{{this.salary}}" placeholder="Salary..." disabled></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                <input class="btn btn-dark btn-lg btn-block center" style="visibility: hidden;" type="submit">
+            </table>
+        </form>
+    </div>
+    
+</body>
+</html>

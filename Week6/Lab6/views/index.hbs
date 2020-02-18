@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home| Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark p-5">
+    <div class="container bg-secondary text-light col-md-10 align-self-center rounded border border-dark p-4">
+        <h2 style="font-family: 'Abril Fatface', cursive;">Add Employee</h2>
+    <form action="/ViewEmployees" method="POST">
+        <div class="form-group" >
+            <label for="exampleFormControlInput1">First Name</label>
+            <input name="fname" type="text" class="form-control" placeholder="First Name...">
+        </div>
+        <div class="form-group" action="">
+            <label for="exampleFormControlInput1">Last Name</label>
+            <input name="lname" type="text" class="form-control"  placeholder="Last Name...">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Department</label>
+            <select name="department" class="form-control" >
+                <option value="" disabled selected>Select your Department</option>
+                <option>IT</option>
+                <option>Marketing</option>
+                <option>Management</option>
+            </select>
+        </div>
+        <div class="form-group" action="">
+            <label for="exampleFormControlInput1">Start Date</label>
+            <input name="sdate" type="date" class="form-control" placeholder="Start Date...">
+        </div>
+        <div class="form-group" action="">
+            <label for="exampleFormControlInput1">Salary</label>
+            <input name="salary" type="number" class="form-control" placeholder="Salary...">
+        </div>
+        <input class="btn btn-dark btn-lg btn-block center" type="submit">
+    </form>
+    </div>
+</body>
+</html>
