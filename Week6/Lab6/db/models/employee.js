@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
-const Employee = mongoose.model("Employee", {
+const employeeSchema = new Schema({
   fname: { type: String, required: true, trim: true },
   lname: { type: String, required: true, trim: true },
   department: {type: String, required: true, trim: true},
@@ -9,4 +10,4 @@ const Employee = mongoose.model("Employee", {
   salary: {type: Number, required: true, trim: true}
 });
 
-module.exports = Employee;
+module.exports = mongoose.model('Employees', employeeSchema);

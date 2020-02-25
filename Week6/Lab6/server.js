@@ -15,23 +15,29 @@ app.get('/', (req, res) => {
 })
 
 app.get('/ViewEmployees', (req, res) => {
-    const Employee = mongoose.model("employee", employee);
+    const Employee = employee;
 
-    const all = Employee.find();
-    console.log(all);
-    res.render('ViewEmployees.hbs', {employees: all});
-})
+    employee.find().exec((err, docs) => { 
+        res.render('ViewEmployees.hbs', 
+        {
+            employees: docs
+        });
+    });
+
+});
 
 app.post('/ViewEmployees', (req, res) => {
     let Employee = new employee(req.body);
 
     Employee.save().then ( () => {
         res.status(200)
-        const all = Employee.find();
-        res.render('ViewEmployees.hbs', 
+        employee.find().exec((err, docs) => { 
+            res.render('ViewEmployees.hbs', 
             {
-                employees: all
+                employees: docs
             });
+        });
+        
     }).catch ((e) => {
         res.status(400).send(e);
     });   
