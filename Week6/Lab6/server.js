@@ -43,6 +43,49 @@ app.post('/ViewEmployees', (req, res) => {
     });   
 });
 
+app.post('/delete', (req, res) => {
+    const Employee = employee;
+    const id = req.body.id;
+
+    employee.findByIdAndDelete(id, function (err) {
+        if (err) console.log(err);
+    });
+
+    employee.find().exec((err, docs) => { 
+        res.render('ViewEmployees.hbs', 
+        {
+            employees: docs
+        });
+    });
+});
+
+app.post('/edit', (req, res) => {
+    const Employee = req.body;
+
+    employee.findById(Employee.id, (err, docs) => { 
+        console.log(docs);
+        res.render('Edit.hbs', 
+        {
+            employees: docs
+        });
+    });
+});
+
+app.post('/update', (req, res) => {
+    const Employee = req.body;
+
+    employee.findByIdAndUpdate( Employee.id, Employee, function f (err, result){
+        if(err) console.log(err);
+    });
+    employee.findById(Employee.id, (err, docs) => { 
+        console.log(docs);
+        res.render('ViewEmployees.hbs', 
+        {
+            employees: docs
+        });
+    });
+});
+
 app.listen(3001, () => {
     console.log("http://localhost:3001/")
 })
